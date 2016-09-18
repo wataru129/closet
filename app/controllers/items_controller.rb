@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items=Item.all.order("id DESC")
+    @items=Item.all.order("id DESC").page(params[:page])
   end
   def new
   end
