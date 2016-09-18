@@ -5,7 +5,7 @@ class CreateItems < ActiveRecord::Migration
       t.string :image
       t.text :description
 
-      t.timestamps 
+      t.timestamps
     end
   end
 end
