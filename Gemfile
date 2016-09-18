@@ -50,4 +50,4 @@ gem 'paperclip' #画像アップロードを簡単に実装できるgemです。
 gem 'kaminari'  #ページネーションを実現するためのgemです。
 gem 'compass-rails','~> 2.0'
 gem 'sprockets', '2.11.0'
-
+gem "devise"
