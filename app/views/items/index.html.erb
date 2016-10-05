@@ -5,4 +5,5 @@
         <span class="name"><%= item.name %></span>
       </div>
     <% end %>
+    <%= paginate @items, outer_window: 4 %>
   </div>

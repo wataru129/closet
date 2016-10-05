@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Closet</title>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -19,9 +22,11 @@
         s.parentNode.insertBefore(wf, s);
       })();
     </script>
+
   </head>
 
   <body>
+  <%= render 'layouts/header' %>
     <header class="header">
       <div class="header__bar row">
         <h1 class="grid-6"><a href="/">Closet</a></h1>
