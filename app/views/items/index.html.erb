@@ -1,9 +1,6 @@
 <div class="contents row" >
     <% @items.each do |item| %>
-      <div class="content_post" style="background-image: url(<%= item.image %>);">
-        <%= simple_format(item.description) %>
-        <span class="name"><%= item.name %></span>
-      </div>
+      <%=render partial:"item",locals:{item: item} %>
     <% end %>
     <%= paginate @items, outer_window: 4 %>
   </div>
