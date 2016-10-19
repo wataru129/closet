@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   def new
   end
   def create
-    @item=Item.create(item_params)
+    @item=Item.create(image: item_params[:image], description: item_params[:description],user_id: current_user.id)
   end
   def edit
     @item = Item.find(params[:id]) 
@@ -19,13 +19,13 @@ class ItemsController < ApplicationController
   end
   def show
       @item=  Item.find(params[:id])
-      comment=@item.comments.includes(:user)
+      @comments=@item.comments.includes(:user)
   end
   def destroy
     item=Item.find(params[:id])
     if item.user_id = current_user.id
-      item.destroy 
-    end 
+      item.destroy
+    end
   end
 
 

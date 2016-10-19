@@ -13,16 +13,16 @@
       </ul>
     </div>
     <% end %>
-    <%= simple_format(@item.text) %>
+    <%= simple_format(@item.description) %>
     <span class="name">
-      <a href="/users/<%= @item.user.id %>">
-        <span>投稿者</span><%= @item.user.nickname %>
+      <a href="/users/<%= @item.id %>">
+        <span>投稿者</span><%= @item.id %>
       </a>
     </span>
   </div>
   <div class = "container">
     <% if current_user %>
-      <%= form_tag("/items/#{@item.id}/comments,method: :post") do %>
+       <%= form_tag("/items/#{@item.id}/comments",method: :post) do %>
       <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
       <input type="submit" value="SENT">
       <% end %>
@@ -32,10 +32,10 @@
     <%if @comments %>
       <% @comments.each do |comment| %>
         <p>
-          <strong><%= link_to comment.user.nickname,"/user/#{comment.user_id}"%>:</strong>
+          <strong><%= link_to comment.user.nickname,"/users/#{comment.item.user_id}",method: :get%></strong>
           <%= comment.text%>
         </p>
       <% end%>
-    <%end%>  
+    <%end%>
   </div>
 </div>
